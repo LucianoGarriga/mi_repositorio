@@ -1,0 +1,24 @@
+@import "./dimensiones";
+
+.servicios-padre{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: $dimension-normal;
+}
+
+
+.servicios-hijo{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    .hijo__img{
+        max-width: 280px;
+    }
+}
+
+.servicios-item{
+    text-align: justify;
+    display: grid; 
+    place-items: center; 
+}

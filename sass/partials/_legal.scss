@@ -1,0 +1,27 @@
+@import "./colores";
+@import "./dimensiones";
+
+.art2{
+    background-color: $color-greyclear;
+    margin: 15px; 
+    padding: 15px;
+    flex: 1 10 100px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+    box-shadow: $color-black 10px 10px 20px 10px;
+    text-align: center; 
+    border-bottom: 5px solid $color-black;
+    border-radius: 10px;
+    h3{
+        word-spacing: $bordes-tres;
+        letter-spacing: $bordes-tres;
+    }
+}
+  
+.art2:hover {
+    background-color: $color-greyopacity;
+    color: $color-white;
+    border-bottom: 5px solid $color-black;
+    border-radius: 10px;
+}

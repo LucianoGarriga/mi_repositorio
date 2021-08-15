@@ -1,0 +1,177 @@
+@import "./partials/estructura";
+@import "./partials/colores";
+@import "./partials/dimensiones";
+@import "./partials/navbar";
+@import "./partials/article";
+@import "./partials/servicios";
+@import "./partials/miembros";
+@import "./partials/footer";
+@import "./partials/legal";
+@import "./partials/accordion";
+
+hr{
+    opacity: 1;
+    height: 10px !important;
+    background-image: linear-gradient(to right, $color-greyopacity 0%, $color-blackopacity 100%);
+}
+
+.txt-centrado{
+    display: block;
+    margin: auto;
+}
+
+@mixin border($margin, $padding) {
+    margin: $margin;
+    padding: $padding;    
+}
+
+p {
+    @include border(10px, 10px);
+    font-style: normal;
+    font-weight: bold;
+    font-size: $dimension-dos;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+
+h1{
+    animation-duration: 2s;
+    animation-name: aparecer;
+    background-image: linear-gradient(to right, $color-greyopacity 0%, $color-black 100%);
+    background-blend-mode: multiply,multiply;
+    color: $color-white;
+    text-align: center;  
+    font-size: 4rem;
+    font-family: 'Cormorant Garamond', serif;
+}
+ 
+.sub{
+    margin: 15px;
+    border-style: outset;
+    border-radius: $bordes-tres;
+    text-transform: uppercase;
+    background-color: $color-lightblue;
+    text-align: center;
+}
+
+h3{  
+    font-weight: bold;
+    margin: 15px 10px;
+    font-size: $dimension-medio;
+    font-family: 'Anton', sans-serif;     
+    border-radius: 6px;
+    text-shadow: black 2px 2px 4px;
+}
+
+$colores: aplicable;
+
+h4{ 
+    @include border(10px, 5px 20px)
+    font-size: $dimension-dos;
+    text-align: center;    
+    border: 6px;
+    text-transform: uppercase;
+    font-family: 'Cormorant Garamond', serif;
+    border-style: outset;
+    border-radius: 6px;
+    @if $colores = aplicable{
+        color: $color-white;
+        background-color: $color-blackopacity;    
+        border-color: $color-greyopacity;
+    } @else {
+        color: $color-celestetable;
+        background-color: $color-white;    
+        border-color: $color-celestetable;
+    }
+}
+
+
+table {
+    margin: 15px 15px;
+    border: 2px solid $color-black;
+    font-style: normal;
+    font-weight: bold;
+    size: 35vh;
+    font-size: $dimension-normal;
+    font-family: 'Cormorant Garamond', serif;
+    background-color: $color-celestetable;
+    th {
+        padding: 1px;
+        margin: 1px;
+        background-color:$color-greyclear;
+        border: $bordes-tres solid;
+    }
+    tr, td { 
+        border: $bordes-tres solid;
+        text-align: left;
+        padding: 1px;
+        margin: 1px;
+    }
+}
+
+@keyframes aparecer {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+form{
+    display: block;
+    font-style: normal;
+    font-weight: bold;
+    font-size: $dimension-dos;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: left;
+}
+  
+legend label{
+    @include border(5px, 5px);
+}
+
+
+@media screen and (min-width: 1400px) {
+    .servicios-padre{
+        grid-gap: $dimension-doble;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .servicios-padre{
+        grid-template-columns: 1fr;
+    }
+
+    .miembros-padre{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    h1{
+        font-size: 7rem;
+        font-family: 'Cormorant Garamond', serif;
+    }
+    .servicios-padre{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    p{
+        font-size: $dimension-medio;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .servicios-padre{
+        grid-template-columns: 1fr;
+    }
+
+    .parrafo{
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: $dimension-normal;
+    }
+
+    .miembros-padre{
+        grid-template-columns: 1fr;
+    } 
+}

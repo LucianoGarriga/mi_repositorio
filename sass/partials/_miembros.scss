@@ -1,0 +1,26 @@
+@import "./colores";
+@import "./dimensiones";
+
+.equipo{
+    background-color: $color-purple;
+    color: $color-white;
+        .miembros img{
+        width:250px;
+        height:250px;
+        border-radius:150px;
+        border: $bordes-tres solid $color-white;
+    }
+}
+
+
+.miembros-padre{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: $dimension-normal;
+    &__miembros {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+    }
+}

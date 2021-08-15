@@ -1,0 +1,45 @@
+//
+// Base styles
+//
+
+.accordion {
+  display: inline-block;
+  align-items: center;
+  width: 100%;
+  text-align: justify; 
+  border: 0;
+  margin-right: 20px;
+  padding: 10px;
+  overflow-anchor: none;
+
+  &:not(.collapsed) {
+    color: $color-greyopacity;
+    background-color: $color-lightblue;
+  }
+
+  // Accordion icon
+  &::after {
+    flex-shrink: 0;
+    width: 1000px;
+    height: 10px;
+    margin-left: auto;
+  }
+}
+
+
+
+
+// Flush accordion items
+//
+// Remove borders and border-radius to keep accordion items edge-to-edge.
+
+.accordion-flush {
+  .accordion-collapse {
+    border-width: 0;
+  }
+
+  .accordion-item {
+    border-right: 0;
+    border-left: 0;
+  }
+}

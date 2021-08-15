@@ -1,0 +1,37 @@
+@import "./colores";
+@import "./dimensiones";
+
+.main1{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    place-items: center;
+    p {
+        animation-duration: 0.5s;
+        animation-name: aparecer;
+        background-image: linear-gradient(to right, $color-greyopacity 0%, $color-blackopacity);
+        background-blend-mode: multiply,multiply;
+        color: $color-white;
+        text-align: center; 
+        font-size: $dimension-normal;
+    }
+}
+
+@each $fondo in tribu, franquicias, laboral {
+    .#{$fondo}-icon{
+        background-image: url("../img/#{$fondo}.jpg");
+    }
+}
+
+@for $i from 1 to 3 {
+    .main#{$i} {height: (100vh * $i);}
+}
+
+.main-estilo{
+    opacity: 0.9;
+}
+
+
+
+
